@@ -1,1 +1,185 @@
 
+<!DOCTYPE html><html lang="en"><head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Cookie Policy</title>
+      
+  <script src="https://app.clickfastads.com.br/api/tracker/external/conversions?productId=6a2c02736744928e1f5a0f6d"></script>
+  <script src="https://app.clickfastads.com.br/api/tracker/external/visits"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ClickFastAds/tracker@main/styles.css">
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-image: url('https://background-imgs.s3.sa-east-1.amazonaws.com/c226f5218abcd9f993023ce0e8cccd/6a2c02736744928e1f5a0f6d/1781269403387.jpeg');
+          background-size: cover;
+          background-position: top center;
+          background-repeat: no-repeat;
+        }
+        @media (max-width: 768px) {
+          body {
+            background-image: url('https://background-imgs.s3.sa-east-1.amazonaws.com/c226f5218abcd9f993023ce0e8cccd/6a2c02736744928e1f5a0f6d/1781269407254.jpeg');
+            background-size: cover;
+            background-position: top center;
+          }
+        }
+
+        .overlay {
+          position: fixed;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 1000;
+          width: 100vw;
+          height: 100vh;
+        }
+
+        .cookie-popup {
+          position: fixed;
+          height: fit-content;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1001;
+          max-width: 500px;
+          border-radius: 16px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          padding: 24px;
+        }
+
+        .cookie-popup h2 {
+          font-size: 20px;
+          color: #333;
+          font-weight: bold;
+          margin: 0 0 16px;
+        }
+
+        .cookie-popup p {
+          font-size: 14px;
+          color: #555;
+          line-height: 1.5;
+          margin: 0 0 24px;
+        }
+
+        .cookie-popup .btn {
+          display: inline-block;
+          font-size: 14px;
+          padding: 12px 24px;
+          border-radius: 8px;
+          text-align: center;
+          font-weight: bold;
+          cursor: pointer;
+          outline: none;
+          text-decoration: none;
+          transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+          margin: 6px 8px;;
+        }
+
+        .btn-accept {
+          background-color: #007bff;
+          color: #fff;
+          border: 2px solid #007bff;
+        }
+
+        .btn-accept:hover {
+          background-color: #0056b3;
+          border-color: #0056b3;
+        }
+
+        .btn-reject {
+          background: #f0f2f5;
+          color: #1877f2;
+          border: none;
+        }
+
+        .btn-reject:hover {
+          background: #f0f2f5;
+          color: #166fe5;
+        }
+
+        @media (max-width: 500px) {
+          .cookie-popup {
+            width: 90%;
+            max-width: none;
+            padding: 20px 15px;
+          }
+
+          .cookie-popup h2 {
+            font-size: 18px;
+          }
+
+          .cookie-popup p {
+            font-size: 13px;
+          }
+
+          .cookie-popup .btn {
+            font-size: 13px;
+            padding: 10px 20px;
+            display: block;
+            width: calc(100% - 16px);
+            margin: 10px auto;
+          }
+          .btn-reject {
+            margin-left: auto;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="overlay" id="overlay"></div>
+      <div class="cookie-popup" id="cookiePopup">
+        <h2>Cookie Policy</h2>
+        <p>This website uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking 'Allow,' you agree to our use of cookies. For more info, visit our Cookie Policy.</p>
+        <a id="acceptCookies" class="btn btn-accept" href="https://www.theantilooterkit.com/main/#aff=secginetic0368">Allow</a>
+        <a id="rejectCookies" class="btn btn-reject" href="https://www.theantilooterkit.com/main/#aff=secginetic0368">Close</a>
+      </div>
+      
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function redirectToUrl(url) {
+      const tempLink = document.createElement('a');
+      tempLink.href = url;
+      tempLink.style.display = 'none';
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+    }
+    
+    window.redirectToUrl = redirectToUrl;
+    window.REDIRECT_URL = 'https://www.theantilooterkit.com/main/#aff=secginetic0368';
+  });
+</script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var overlay = document.getElementById('overlay');
+          var cookiePopup = document.getElementById('cookiePopup');
+          var acceptCookies = document.getElementById('acceptCookies');
+          var cookieSettings = document.getElementById('rejectCookies');
+
+          overlay.style.display = 'block';
+          cookiePopup.style.display = 'block';
+
+          acceptCookies.addEventListener('click', function (e) {
+            e.preventDefault();
+            redirectToUrl(acceptCookies.getAttribute("href"));
+          });
+
+          cookieSettings.addEventListener('click', function(e) {
+            e.preventDefault();
+            redirectToUrl(cookieSettings.getAttribute("href"));
+          });
+
+          overlay.addEventListener('click', function() {
+            redirectToUrl(acceptCookies.getAttribute("href"));
+          });
+
+          cookiePopup.addEventListener('click', function (e) {
+            if (e.target === cookiePopup || e.target.closest('.btn') === null) {
+              redirectToUrl(acceptCookies.getAttribute("href"));
+            }
+          });
+        });
+      </script>
+    
+  
+  
+
+</body></html>
